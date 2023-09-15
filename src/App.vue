@@ -6,7 +6,7 @@
 <template>
 	<Header />
 
-	<div class="min-h-[calc(100dvh-56px-160px)]">
+	<div class="min-h-[calc(100dvh-56px-160px)] px-2">
 		<RouterView />
 	</div>
 

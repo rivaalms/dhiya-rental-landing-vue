@@ -1,5 +1,5 @@
 <template>
-<header class="shadow">
+<header class="">
    <div class="container mx-auto">
       <div class="flex justify-end">
          <router-link 
@@ -13,7 +13,14 @@
             to="/about"
             class="p-4 text-gray-700 hover:text-amber-500"
          >
-            About
+            Tentang
+         </router-link>
+
+         <router-link
+            to="/contacts"
+            class="p-4 text-gray-700 hover:text-amber-500"
+         >
+            Kontak Kami
          </router-link>
       </div>
    </div>
