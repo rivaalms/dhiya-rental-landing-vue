@@ -1,14 +1,16 @@
 <script setup lang="ts">
-	import Header from "./components/header.vue"
-	import Footer from "./components/footer.vue"
+import Default from './layouts/default.vue'
+import Homepage from './layouts/homepage.vue'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+const isHomePage = computed(() => {
+	return useRoute().name === 'home' ? true : false
+})
 </script>
 
 <template>
-	<Header />
-
-	<div class="min-h-[calc(100dvh-56px-160px)] px-2">
-		<RouterView />
-	</div>
-
-	<Footer />
+<component :is="isHomePage ? Homepage : Default">
+	<RouterView />
+</component>
 </template>
