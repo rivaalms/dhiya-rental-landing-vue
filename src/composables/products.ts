@@ -64,6 +64,11 @@ const vehicles : Array <Vehicle> = [
    }
 ]
 
+/**
+ * Retrieve single vehicle's data
+ * @param { string } slug
+ * @return { Vehicle | null }
+ */
 export const useVehicle = (slug: string) : Vehicle | null => {
    const data = vehicles.find((item: Vehicle) => item.slug === slug)
    
@@ -71,10 +76,19 @@ export const useVehicle = (slug: string) : Vehicle | null => {
    return data
 }
 
+/**
+ * Retrieve all vehicles' data
+ * @return { Vehicle[] }
+ */
 export const useProducts = () : Vehicle[] => {
    return vehicles
 }
 
+/**
+ * Convert number to currency-formatted string
+ * @param { number } price
+ * @return { string } The currency is using IDR
+ */
 export function useCurrency(price: number) : string {
    const formatted = new Intl.NumberFormat('id-ID', {
       style: 'currency',
