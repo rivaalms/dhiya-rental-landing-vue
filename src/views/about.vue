@@ -14,7 +14,7 @@
       <div class="grid grid-cols-3 gap-4">
          <div class="col-span-2 flex items-center">
             <p class="leading-relaxed">
-               Dhiya Multi Niaga adalah perusahaan yang bergerak di bidang jasa penyedia transportasi pariwisata dan layanan jasa perjalanan pariwisata. Kami memberikan pelayanan jasa transportasi yang sesuai dengan kebutuhan Anda. Dengan tim yang berpengalaman dan performa layanan terbaik, kami siap melayani kebutuhan pariwisata Anda dengan harga yang bersahabat.
+               {{ store.organizationName }} adalah perusahaan yang bergerak di bidang jasa penyedia transportasi pariwisata dan layanan jasa perjalanan pariwisata. Kami memberikan pelayanan jasa transportasi yang sesuai dengan kebutuhan Anda. Dengan tim yang berpengalaman dan performa layanan terbaik, kami siap melayani kebutuhan pariwisata Anda dengan harga yang bersahabat.
             </p>
          </div>
          <div class="">
@@ -49,4 +49,7 @@
 
 <script setup lang="ts">
 import Header from '../components/header.vue'
+import { useAppStore } from '../stores/app'
+
+const store = useAppStore()
 </script>

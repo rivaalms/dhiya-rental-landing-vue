@@ -13,7 +13,7 @@
 <div class="pb-12 pt-24">
    <div class="md:w-2/3 sm:container mx-auto">
       <p class="mb-4">
-         Sewa <b>{{ data?.name }}</b> Bandung dengan harga yang terjangkau didukung dengan fasilitas yang bagus. Dhiya Multi Niaga merupakan perusahaan penyedia jasa transportasi di Bandung.
+         Sewa <b>{{ data?.name }}</b> Bandung dengan harga yang terjangkau didukung dengan fasilitas yang bagus. {{ store.organizationName }} merupakan perusahaan penyedia jasa transportasi di Bandung.
       </p>
       <p class="mb-4">
          Didukung dengan armada dengan kondisi yang selalu prima dan pelayanan crew yang selalu ramah dalam melayani serta memiliki fasilitas yang sudah memiliki standar pariwisata, kami siap melayani anda yang akan berwisata di dalam Kota Bandung maupun keluar kota.
@@ -101,7 +101,9 @@ import { onBeforeMount, computed, ref, type ComputedRef } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Header from '../../components/header.vue'
 import { useProducts, useVehicle } from '../../composables/products'
+import { useAppStore } from '../../stores/app'
 
+const store = useAppStore()
 const route = useRoute()
 const acceptedRoutes : ComputedRef<string[]> = computed(() => {
    return ['tayo', 'thomas', 'lani']

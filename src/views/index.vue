@@ -10,7 +10,7 @@
          </p>
          <div class="w-40 border-2 border-amber-500"></div>
          <p class="uppercase text-gray-200 tracking-wide font-semibold text-6xl mb-12">
-            Dhiya Multi Niaga
+            {{ store.organizationName }}
          </p>
          <div>
             <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 font-medium rounded-full tracking-wide px-8 py-4 mb-2 transition-colors">
@@ -117,6 +117,9 @@
 <script setup lang="ts">
 import Header from '../components/header.vue'
 import { ref, computed } from 'vue'
+import { useAppStore } from '../stores/app'
+
+const store = useAppStore()
 
 const products = computed(() => {
    return [

@@ -6,7 +6,7 @@
             {{ store.about.address }} | {{ store.about.email }} | {{ store.about.phone }}
          </p>
          <p class="text-center">
-            &copy; 2023 Dhiya Multi Niaga
+            &copy; 2023 {{ store.organizationName }}
          </p>
       </div>
    </div>
