@@ -97,7 +97,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, computed, ref, type ComputedRef } from 'vue'
+import { onBeforeMount, watch, computed, ref, type ComputedRef } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Header from '../../components/header.vue'
 import { useProducts, useVehicle } from '../../composables/products'
@@ -105,15 +105,10 @@ import { useAppStore } from '../../stores/app'
 
 const store = useAppStore()
 const route = useRoute()
-const acceptedRoutes : ComputedRef<string[]> = computed(() => {
-   return ['tayo', 'thomas', 'lani']
-})
 const data = ref(useVehicle(route.params.name.toString()))
 
 onBeforeMount(() => {
-   if (!acceptedRoutes.value.find((item) => route.params.name === item)) {
-      useRouter().push('/')
-   }
+   if (!data.value) return useRouter().push('/')
 })
 
 const useCurrency = (price?: number) : string => {
