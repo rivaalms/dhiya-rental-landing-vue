@@ -108,7 +108,7 @@ const route = useRoute()
 const data = ref(useVehicle(route.params.name.toString()))
 
 onBeforeMount(() => {
-   if (!data.value) return useRouter().push('/')
+   if (!data.value) return useRouter().push('/error/404')
 })
 
 const useCurrency = (price?: number) : string => {
