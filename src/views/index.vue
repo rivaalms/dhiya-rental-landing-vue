@@ -13,7 +13,7 @@
             Dhiya Multi Niaga
          </p>
          <div>
-            <router-link to="/contacts" class="text-white bg-amber-600 hover:bg-amber-700 focus:ring-4 focus:ring-amber-400/75 font-medium rounded-full tracking-wide px-8 py-4 mb-2">
+            <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 font-medium rounded-full tracking-wide px-8 py-4 mb-2 transition-colors">
                RESERVASI SEKARANG
             </router-link>
          </div>
@@ -73,51 +73,23 @@
       </p>
       <div class="w-2/3 mx-auto">
          <div class="grid grid-cols-3 gap-4">
-            <div class="card p-0">
-               <div class="aspect-video">
-                  <img src="/img/bus-1.jpg" alt="" class="rounded-t-[0.45rem]">
-               </div>
-               <div class="p-5 flex flex-col items-center gap-4">
-                  <p class="font-semibold text-lg">
-                     Bus 1
-                  </p>
-                  <div class="mb-3">
-                     <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
-                        Detail
-                     </router-link>
+            <template v-for="product in products" :key="product.label">
+               <div class="card p-0">
+                  <div class="aspect-video">
+                     <img :src="product.img" alt="" class="rounded-t-[0.45rem]">
+                  </div>
+                  <div class="p-5 flex flex-col items-center gap-4">
+                     <p class="font-semibold text-lg">
+                        {{ product.label }}
+                     </p>
+                     <div class="mb-3">
+                        <router-link :to="product.href" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
+                           Detail
+                        </router-link>
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="card p-0">
-               <div class="aspect-video">
-                  <img src="/img/bus-1.jpg" alt="" class="rounded-t-[0.45rem]">
-               </div>
-               <div class="p-5 flex flex-col items-center gap-4">
-                  <p class="font-semibold text-lg">
-                     Bus 1
-                  </p>
-                  <div class="mb-3">
-                     <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
-                        Detail
-                     </router-link>
-                  </div>
-               </div>
-            </div>
-            <div class="card p-0">
-               <div class="aspect-video">
-                  <img src="/img/bus-1.jpg" alt="" class="rounded-t-[0.45rem]">
-               </div>
-               <div class="p-5 flex flex-col items-center gap-4">
-                  <p class="font-semibold text-lg">
-                     Bus 1
-                  </p>
-                  <div class="mb-3">
-                     <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
-                        Detail
-                     </router-link>
-                  </div>
-               </div>
-            </div>
+            </template>
          </div>
       </div>
    </div>
@@ -128,13 +100,13 @@
          Reservasi Sekarang
       </p>
       <div class="grid grid-cols-3 gap-4 h-96 w-full mx-auto bg-[url('../public/img/ranca-upas.jpg')] bg-left-bottom bg-no-repeat bg-cover relative">
-         <div class="absolute h-full w-full bg-black opacity-[25%]"></div>
+         <div class="absolute h-full w-full bg-black opacity-[45%]"></div>
          <div class="col-span-2 px-28 flex items-center">
             <div class="z-40 text-gray-200">
-               <p class="mb-4 text-lg">Kami menawarkan beragam armada transportasi dalam dan luar Kota Bandung</p>
-               <button class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 text-sm font-medium rounded-full tracking-wide px-8 py-4 mr-2 mb-2">
+               <p class="mb-8 text-lg">Kami menawarkan beragam armada transportasi dalam dan luar Kota Bandung</p>
+               <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 text-sm font-medium rounded-full tracking-wide px-8 py-4 mr-2 mb-2">
                   RESERVASI SEKARANG
-               </button>
+               </router-link>
             </div>
          </div>
       </div>
@@ -144,4 +116,25 @@
 
 <script setup lang="ts">
 import Header from '../components/header.vue'
+import { ref, computed } from 'vue'
+
+const products = computed(() => {
+   return [
+      {
+         label: 'Bus 1',
+         href: '/products/bus-1',
+         img: '/img/bus-1.jpg'
+      },
+      {
+         label: 'Bus 2',
+         href: '/products/bus-2',
+         img: '/img/bus-1.jpg'
+      },
+      {
+         label: 'Bus 3',
+         href: '/products/bus-3',
+         img: '/img/bus-1.jpg'
+      },
+   ]
+})
 </script>

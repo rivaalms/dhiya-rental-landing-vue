@@ -11,6 +11,14 @@
          </router-link>
 
          <router-link
+            to="/products"
+            class="p-4 hover:text-amber-500 transition-colors"
+            :class="currentRoute === '/products' ? activeClass : ''"
+         >
+            Produk
+         </router-link>
+         
+         <router-link
             to="/about"
             class="p-4 hover:text-amber-500 transition-colors"
             :class="currentRoute === '/about' ? activeClass : ''"
