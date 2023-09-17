@@ -75,6 +75,16 @@ export const useProducts = () : Vehicle[] => {
    return vehicles
 }
 
+export function useCurrency(price: number) : string {
+   const formatted = new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR'
+   })
+   .format(price)
+
+   return formatted
+}
+
 interface Vehicle {
    name: string
    slug?: string /* use hyphen as word separator (eg: this-is-a-word) */
