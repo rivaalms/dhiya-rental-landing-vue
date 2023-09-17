@@ -4,14 +4,14 @@
    <Header class="absolute h-full w-full"/>
    <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
       <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-         <p class="uppercase text-gray-200 font-semibold text-5xl">
+         <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
             {{ data?.name }}
          </p>
       </div>
    </div>
 </div>
-<div class="pb-12 pt-24">
-   <div class="md:w-2/3 sm:container mx-auto">
+<div class="pb-12 pt-12 md:pt-24">
+   <div class="md:w-2/3 px-4 md:px-0 mx-auto">
       <p class="mb-4">
          Sewa <b>{{ data?.name }}</b> Bandung dengan harga yang terjangkau didukung dengan fasilitas yang bagus. {{ store.organizationName }} merupakan perusahaan penyedia jasa transportasi di Bandung.
       </p>
@@ -26,9 +26,9 @@
       </p>
    </div>
 </div>
-<div class="py-12">
-   <div class="md:w-2/3 sm:container mx-auto">
-      <div class="grid grid-cols-2 gap-8">
+<div class="md:py-12">
+   <div class="md:w-2/3 px-4 md:px-0 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
          <div class="aspect-video overflow-hidden flex items-center">
             <img :src="data?.img" alt="">
          </div>
@@ -36,16 +36,16 @@
             <table class="w-full text-gray-600 text-left">
                <tbody>
                   <tr class="text-gray-900">
-                     <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">Kapasitas</th>
+                     <th scope="row" class="px-6 py-2 font-semibold whitespace-nowrap">Kapasitas</th>
                      <td class="px-6 py-2">{{ data?.capacity }} seat</td>
                   </tr>
                   <tr class="text-gray-900">
-                     <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">Harga dalam kota</th>
-                     <td class="px-6 py-2">{{ useCurrency(data?.price_inside_city) }}</td>
+                     <th scope="row" class="px-6 py-2 font-semibold whitespace-nowrap">Harga dalam kota</th>
+                     <td class="px-6 py-2">{{ useCurrency(data!.price_inside_city) }}</td>
                   </tr>
                   <tr class="text-gray-900">
-                     <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">Harga luar kota</th>
-                     <td class="px-6 py-2">{{ useCurrency(data?.price_outside_city) }}</td>
+                     <th scope="row" class="px-6 py-2 font-semibold whitespace-nowrap">Harga luar kota</th>
+                     <td class="px-6 py-2">{{ useCurrency(data!.price_outside_city) }}</td>
                   </tr>
                </tbody>
             </table>
@@ -54,8 +54,8 @@
    </div>
 </div>
 <div class="py-12">
-   <div class="md:w-2/3 sm:w-full mx-auto">
-      <p class="text-2xl mb-8 font-semibold text-center uppercase">
+   <div class="md:w-2/3 px-4 md:px-0 mx-auto">
+      <p class="text-xl md:text-2xl mb-8 font-semibold text-center uppercase">
          Daftar Harga Sewa Berdasarkan Tujuan
       </p>
       <div class="relative overflow-x-auto mb-12">
@@ -77,10 +77,10 @@
          </table>
       </div>
       <div class="">
-         <p class="text-xl mb-4 font-semibold">
+         <p class="text-lg md:text-xl mb-4 font-semibold">
             Catatan
          </p>
-         <ul class="list-disc">
+         <ul class="list-disc ps-8">
             <li class="mb-2">
                <span class="font-semibold">Harga termasuk:</span> BBM, jasa driver.
             </li>
@@ -100,7 +100,7 @@
 import { onBeforeMount, watch, computed, ref, type ComputedRef } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Header from '../../components/header.vue'
-import { useProducts, useVehicle } from '../../composables/products'
+import { useCurrency, useVehicle } from '../../composables/products'
 import { useAppStore } from '../../stores/app'
 
 const store = useAppStore()
@@ -110,15 +110,4 @@ const data = ref(useVehicle(route.params.name.toString()))
 onBeforeMount(() => {
    if (!data.value) return useRouter().push('/error/404')
 })
-
-const useCurrency = (price?: number) : string => {
-   if (!price) return 'N/A'
-
-   const formatted = new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR'
-   }).format(price!)
-
-   return formatted
-}
 </script>

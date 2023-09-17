@@ -4,15 +4,15 @@
       <Header class="absolute h-full w-full"/>
       <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
          <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-            <p class="uppercase text-gray-200 font-semibold text-5xl">
-               Kontak Kami
+            <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
+               Kontak
             </p>
          </div>
       </div>
    </div>
-   <div class="w-2/3 mx-auto py-20">
+   <div class="md:w-2/3 px-4 md:px-0 mx-auto py-20">
       <div class="p-4 flex justify-center gap-4">
-         <div class="w-1/2">
+         <div class="w-1/2 hidden md:block">
             <div class="w-2/3 mx-auto">
                <img src="/img/contact.png" alt="" class="w-full">
             </div>

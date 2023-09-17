@@ -4,27 +4,27 @@
       <Header class="absolute h-full w-full"/>
       <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
          <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-            <p class="uppercase text-gray-200 font-semibold text-5xl">
+            <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
                Tentang
             </p>
          </div>
       </div>
    </div>
-   <div class="py-12 w-2/3 mx-auto">
-      <div class="grid grid-cols-3 gap-4">
-         <div class="col-span-2 flex items-center">
+   <div class="py-12 md:w-2/3 px-4 md:px-0 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+         <div class="md:col-span-2 flex items-center">
             <p class="leading-relaxed">
                {{ store.organizationName }} adalah perusahaan yang bergerak di bidang jasa penyedia transportasi pariwisata dan layanan jasa perjalanan pariwisata. Kami memberikan pelayanan jasa transportasi yang sesuai dengan kebutuhan Anda. Dengan tim yang berpengalaman dan performa layanan terbaik, kami siap melayani kebutuhan pariwisata Anda dengan harga yang bersahabat.
             </p>
          </div>
-         <div class="">
+         <div class="order-first md:order-last">
             <img src="/img/dhiya-rental-logo.png" alt="" class="w-full h-auto">
          </div>
       </div>
    </div>
    <div class="bg-emerald-900">
-      <div class="w-2/3 mx-auto py-24">
-         <div class="grid grid-cols-2 gap-12">
+      <div class="md:w-2/3 px-4 md:px-0 mx-auto py-24">
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div class="text-gray-200">
                <h5 class="mb-4 text-4xl font-bold tracking-tight uppercase">
                   Visi

@@ -4,14 +4,14 @@
    <Header class="absolute h-full w-full"/>
    <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
       <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-         <p class="uppercase text-gray-200 font-semibold text-5xl">
+         <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
             Produk
          </p>
       </div>
    </div>
 </div>
-<div class="w-2/3 mx-auto py-12">
-   <div class="py-12">
+<div class="container px-4 md:px-0 md:w-2/3 mx-auto py-12">
+   <div class="pb-6 md:pb-0 md:py-12">
       <p class="mb-4">
          Sewa Bus Bandung di {{ store.organizationName }} yang selalu siap menghantar Anda berwisata murah dengan armada bus pariwisata di Bandung, Indonesia dengan pelayanan profesional, bersahabat, dan memuaskan.
       </p>
@@ -22,7 +22,7 @@
          Berikut ini adalah daftar armada yang kami tawarkan. Silakan klik tombol detail untuk informasi lebih lanjut.
       </p>
    </div>
-   <div class="grid grid-cols-3 gap-4 pb-12">
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pb-12">
       <div v-for="item in data" :key="item.name" class="card p-0">
          <div class="aspect-video">
             <img :src="item.img" alt="" class="rounded-t-[0.45rem]">
@@ -42,8 +42,8 @@
          </div>
       </div>
    </div>
-   <div class="py-12">
-      <p class="text-2xl font-semibold text-center uppercase mb-4">
+   <div class="pb-6 pt-12 md:pb-0 md:pt-0 md: md:py-12">
+      <p class="text-xl md:text-2xl font-semibold text-center uppercase mb-4">
          Fasilitas
       </p>
       <p>
@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import Header from '../../components/header.vue'
 import { computed } from 'vue'
-import { useProducts } from '../../composables/products'
+import { useProducts, useCurrency } from '../../composables/products'
 import { useAppStore } from '../../stores/app'
 
 const store = useAppStore()
@@ -64,13 +64,4 @@ const store = useAppStore()
 const data = computed(() => {
    return useProducts()
 })
-
-const useCurrency = (price: number) : string => {
-   const formatted = new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR'
-   }).format(price)
-
-   return formatted
-}
 </script>
