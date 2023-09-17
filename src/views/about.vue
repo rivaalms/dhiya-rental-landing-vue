@@ -1,5 +1,5 @@
 <template>
-   <div class="h-[420px] bg-[url('../public/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
+   <div class="h-[420px] bg-[url('/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
       <div class="absolute h-full w-full bg-black -z-30 opacity-[25%]"></div>
       <Header class="absolute h-full w-full"/>
       <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">

@@ -1,6 +1,6 @@
 <template>
 <!-- Hero -->
-<div class="h-[650px] bg-[url('../public/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
+<div class="h-[650px] bg-[url('/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
    <div class="absolute h-full w-full bg-black -z-30 opacity-[25%]"></div>
    <Header class="absolute h-full w-full"/>
    <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
@@ -99,7 +99,7 @@
       <p class="text-4xl mb-8 font-semibold text-center uppercase">
          Reservasi Sekarang
       </p>
-      <div class="grid grid-cols-3 gap-4 h-96 w-full mx-auto bg-[url('../public/img/ranca-upas.jpg')] bg-left-bottom bg-no-repeat bg-cover relative">
+      <div class="grid grid-cols-3 gap-4 h-96 w-full mx-auto bg-[url('/img/ranca-upas.jpg')] bg-left-bottom bg-no-repeat bg-cover relative">
          <div class="absolute h-full w-full bg-black opacity-[45%]"></div>
          <div class="col-span-2 px-28 flex items-center">
             <div class="z-40 text-gray-200">
