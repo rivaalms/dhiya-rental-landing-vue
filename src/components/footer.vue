@@ -3,10 +3,10 @@
    <div class="container mx-auto">
       <div class="grid grid-cols-1 gap-4 py-12 px-4 text-white">
          <p class="text-center text-sm md:text-base">
-            {{ store.about.address }} | {{ store.about.email }} | {{ store.about.phone }}
+            {{ company.address }} | {{ company.email }} | {{ company.phone }}
          </p>
          <p class="text-center text-sm md:text-base">
-            &copy; 2023 {{ store.organizationName }}
+            &copy; 2023 {{ company.name }}
          </p>
       </div>
    </div>
@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { useAppStore } from '../stores/app'
-const store = useAppStore()
+import { useCompany } from '@/composables/company'
+import { ref } from 'vue'
+
+const company = ref(useCompany)
 </script>

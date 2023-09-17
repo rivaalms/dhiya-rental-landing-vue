@@ -10,7 +10,7 @@
          </p>
          <div class="w-40 border-2 border-amber-500"></div>
          <p class="uppercase text-gray-200 tracking-wide font-semibold text-3xl md:text-6xl mb-12">
-            {{ store.organizationName }}
+            {{ company.name }}
          </p>
          <div>
             <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 font-medium rounded-full tracking-wide px-8 py-4 mb-2 transition-colors text-sm md:text-base">
@@ -86,9 +86,6 @@
                         Kendaraan berkapasitas {{ item.capacity }} penumpang dengan harga mulai dari {{ useCurrency(item.price_inside_city) }}.
                      </p>
                      <div class="mb-2">
-                        <!-- <router-link :to="item.href" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
-                           Detail
-                        </router-link> -->
                         <router-link :to="item.href" class="text-amber-500 underline">
                            Detail
                         </router-link>
@@ -107,9 +104,6 @@
 
    <!-- Contacts -->
    <div class="pt-12 md:py-24 grid grid-cols-1">
-      <!-- <p class="text-xl md:text-4xl mb-8 font-semibold text-center uppercase">
-         Reservasi Sekarang
-      </p> -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-96 w-full mx-auto bg-[url('/img/ranca-upas.jpg')] bg-left-bottom bg-no-repeat bg-cover relative">
          <div class="absolute h-full w-full bg-black opacity-[45%]"></div>
          <div class="md:col-span-2 px-4 md:px-28 flex items-center">
@@ -126,13 +120,12 @@
 </template>
 
 <script setup lang="ts">
-import Header from '../components/header.vue'
+import Header from '@/components/header.vue'
 import { ref, computed } from 'vue'
-import { useAppStore } from '../stores/app'
-import { useProducts, useCurrency } from '../composables/products'
+import { useCompany } from '@/composables/company'
+import { useProducts, useCurrency } from '@/composables/products'
 
-const store = useAppStore()
-
+const company = ref(useCompany)
 const products = computed(() => {
    return useProducts().slice(0, 3)
 })

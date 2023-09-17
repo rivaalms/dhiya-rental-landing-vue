@@ -13,7 +13,7 @@
 <div class="pb-12 pt-12 md:pt-24">
    <div class="md:w-2/3 px-4 md:px-0 mx-auto">
       <p class="mb-4">
-         Sewa <b>{{ data?.name }}</b> Bandung dengan harga yang terjangkau didukung dengan fasilitas yang bagus. {{ store.organizationName }} merupakan perusahaan penyedia jasa transportasi di Bandung.
+         Sewa <b>{{ data?.name }}</b> Bandung dengan harga yang terjangkau didukung dengan fasilitas yang bagus. {{ company.name }} merupakan perusahaan penyedia jasa transportasi di Bandung.
       </p>
       <p class="mb-4">
          Didukung dengan armada dengan kondisi yang selalu prima dan pelayanan crew yang selalu ramah dalam melayani serta memiliki fasilitas yang sudah memiliki standar pariwisata, kami siap melayani anda yang akan berwisata di dalam Kota Bandung maupun keluar kota.
@@ -97,14 +97,14 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, watch, computed, ref, type ComputedRef } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import Header from '../../components/header.vue'
-import { useCurrency, useVehicle } from '../../composables/products'
-import { useAppStore } from '../../stores/app'
+import Header from '@/components/header.vue'
+import { useCurrency, useVehicle } from '@/composables/products'
+import { useCompany } from '@/composables/company'
 
-const store = useAppStore()
 const route = useRoute()
+const company = ref(useCompany)
 const data = ref(useVehicle(route.params.name.toString()))
 
 onBeforeMount(() => {

@@ -13,10 +13,10 @@
 <div class="container px-4 md:px-0 md:w-2/3 mx-auto py-12">
    <div class="pb-6 md:pb-0 md:py-12">
       <p class="mb-4">
-         Sewa Bus Bandung di {{ store.organizationName }} yang selalu siap menghantar Anda berwisata murah dengan armada bus pariwisata di Bandung, Indonesia dengan pelayanan profesional, bersahabat, dan memuaskan.
+         Sewa Bus Bandung di {{ company.name }} yang selalu siap menghantar Anda berwisata murah dengan armada bus pariwisata di Bandung, Indonesia dengan pelayanan profesional, bersahabat, dan memuaskan.
       </p>
       <p class="mb-4">
-         {{ store.organizationName }} bekerja sama dengan perusahaan Bus pariwisata di Bandung guna menyediakan Sewa Bus Bandung untuk kebutuhan pariwisata dan lainnya.
+         {{ company.name }} bekerja sama dengan perusahaan Bus pariwisata di Bandung guna menyediakan Sewa Bus Bandung untuk kebutuhan pariwisata dan lainnya.
       </p>
       <p class="mb-4">
          Berikut ini adalah daftar armada yang kami tawarkan. Silakan klik tombol detail untuk informasi lebih lanjut.
@@ -47,20 +47,19 @@
          Fasilitas
       </p>
       <p>
-         Fasilitas Bus pariwisata di {{ store.organizationName }} dilengkapi dengan AC, TV, DVD, Karaoke, Reclining Seats, dan Charging Port. Beberapa armada juga memiliki fasilitas tambahan seperti bantal, selimut, Smoking Area, dan Toilet.
+         Fasilitas Bus pariwisata di {{ company.name }} dilengkapi dengan AC, TV, DVD, Karaoke, Reclining Seats, dan Charging Port. Beberapa armada juga memiliki fasilitas tambahan seperti bantal, selimut, Smoking Area, dan Toilet.
       </p>
    </div>
 </div>
 </template>
 
 <script setup lang="ts">
-import Header from '../../components/header.vue'
-import { computed } from 'vue'
-import { useProducts, useCurrency } from '../../composables/products'
-import { useAppStore } from '../../stores/app'
+import Header from '@/components/header.vue'
+import { computed, ref } from 'vue'
+import { useProducts, useCurrency } from '@/composables/products'
+import { useCompany } from '@/composables/company'
 
-const store = useAppStore()
-
+const company = ref(useCompany)
 const data = computed(() => {
    return useProducts()
 })

@@ -22,19 +22,19 @@
                <p class="text-lg mb-2 font-semibold tracking-tight text-gray-900">
                   Alamat
                </p>
-               <p>{{ store.about.address }}</p>
+               <p>{{ company.address }}</p>
             </div>
             <div class="mb-6">
                <p class="text-lg mb-2 font-semibold tracking-tight text-gray-900">
                   Email
                </p>
-               <p>{{ store.about.email }}</p>
+               <p>{{ company.email }}</p>
             </div>
             <div class="mb-6">
                <p class="text-lg mb-2 font-semibold tracking-tight text-gray-900">
                   Telepon
                </p>
-               <p>{{ store.about.phone }}</p>
+               <p>{{ company.phone }}</p>
             </div>
          </div>
       </div>
@@ -42,9 +42,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref} from 'vue'
-import { useAppStore } from '../stores/app'
-import Header from '../components/header.vue'
+import { ref} from 'vue'
+import { useCompany } from '@/composables/company'
+import Header from '@/components/header.vue'
 
-const store = useAppStore()
+const company = ref(useCompany)
 </script>

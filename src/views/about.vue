@@ -14,7 +14,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
          <div class="md:col-span-2 flex items-center">
             <p class="leading-relaxed">
-               {{ store.organizationName }} adalah perusahaan yang bergerak di bidang jasa penyedia transportasi pariwisata dan layanan jasa perjalanan pariwisata. Kami memberikan pelayanan jasa transportasi yang sesuai dengan kebutuhan Anda. Dengan tim yang berpengalaman dan performa layanan terbaik, kami siap melayani kebutuhan pariwisata Anda dengan harga yang bersahabat.
+               {{ company.name }} adalah perusahaan yang bergerak di bidang jasa penyedia transportasi pariwisata dan layanan jasa perjalanan pariwisata. Kami memberikan pelayanan jasa transportasi yang sesuai dengan kebutuhan Anda. Dengan tim yang berpengalaman dan performa layanan terbaik, kami siap melayani kebutuhan pariwisata Anda dengan harga yang bersahabat.
             </p>
          </div>
          <div class="order-first md:order-last">
@@ -48,8 +48,9 @@
 </template>
 
 <script setup lang="ts">
-import Header from '../components/header.vue'
-import { useAppStore } from '../stores/app'
+import Header from '@/components/header.vue'
+import { useCompany } from '@/composables/company'
+import { ref } from 'vue'
 
-const store = useAppStore()
+const company = ref(useCompany)
 </script>
