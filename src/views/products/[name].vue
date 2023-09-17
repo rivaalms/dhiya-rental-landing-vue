@@ -97,8 +97,8 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import Header from '@/components/header.vue'
 import { useCurrency, useVehicle } from '@/composables/products'
 import { useCompany } from '@/composables/company'
@@ -106,8 +106,4 @@ import { useCompany } from '@/composables/company'
 const route = useRoute()
 const company = ref(useCompany)
 const data = ref(useVehicle(route.params.name.toString()))
-
-onBeforeMount(() => {
-   if (!data.value) return useRouter().push('/error/404')
-})
 </script>
