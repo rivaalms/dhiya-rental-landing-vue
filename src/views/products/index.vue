@@ -11,7 +11,7 @@
    </div>
 </div>
 <div class="container px-4 md:px-0 md:w-2/3 mx-auto py-12">
-   <div class="pb-6 md:pb-0 md:py-12">
+   <div class="pb-6 md:py-12">
       <p class="mb-4">
          Sewa Bus Bandung di {{ company.name }} yang selalu siap menghantar Anda berwisata murah dengan armada bus pariwisata di Bandung, Indonesia dengan pelayanan profesional, bersahabat, dan memuaskan.
       </p>
@@ -42,7 +42,7 @@
          </div>
       </div>
    </div>
-   <div class="pb-6 pt-12 md:pb-0 md:pt-0 md: md:py-12">
+   <div class="pb-6 pt-12 md:py-12">
       <p class="text-xl md:text-2xl font-semibold text-center uppercase mb-4">
          Fasilitas
       </p>
