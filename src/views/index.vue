@@ -121,12 +121,10 @@
 
 <script setup lang="ts">
 import Header from '@/components/header.vue'
-import { ref, computed } from 'vue'
-import { useCompany } from '@/composables/company'
-import { useProducts, useCurrency } from '@/composables/products'
+import { computed } from 'vue'
+import { company as Company } from '@/models/company'
+import { getAllVehicles, useCurrency } from '@/models/products'
 
-const company = ref(useCompany)
-const products = computed(() => {
-   return useProducts().slice(0, 3)
-})
+const company = computed(() => Company)
+const products = computed(() => getAllVehicles().slice(0, 3))
 </script>

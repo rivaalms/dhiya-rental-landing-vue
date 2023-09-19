@@ -69,7 +69,7 @@ const vehicles : Array <Vehicle> = [
  * @param { string } slug
  * @return { Vehicle | null }
  */
-export const useVehicle = (slug: string) : Vehicle | null => {
+export const getVehicle = (slug: string) : Vehicle | null => {
    const data = vehicles.find((item: Vehicle) => item.slug === slug)
    
    if (!data) return null
@@ -80,7 +80,7 @@ export const useVehicle = (slug: string) : Vehicle | null => {
  * Retrieve all vehicles' data
  * @return { Vehicle[] }
  */
-export const useProducts = () : Vehicle[] => {
+export const getAllVehicles = () : Vehicle[] => {
    return vehicles
 }
 

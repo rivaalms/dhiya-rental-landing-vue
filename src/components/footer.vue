@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { useCompany } from '@/composables/company'
-import { ref } from 'vue'
+import { company as Company } from '@/models/company'
+import { computed } from 'vue'
 
-const company = ref(useCompany)
+const company = computed(() => Company)
 </script>

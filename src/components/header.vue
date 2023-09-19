@@ -42,13 +42,9 @@
 import { RouterLink, useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
 
-const isHomePage = computed(() => {
-   return useRoute().name === 'home' ? true : false
-})
+const isHomePage = computed(() => useRoute().name === 'home' ? true : false)
 
-const currentRoute = computed(() => {
-   return useRoute().path
-})
+const currentRoute = computed(() => useRoute().path)
 
 const activeClass = ref([
    'text-amber-500',

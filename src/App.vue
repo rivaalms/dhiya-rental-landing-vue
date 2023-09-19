@@ -3,9 +3,7 @@ import Default from './layouts/default.vue'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 
-const isErrorPage = computed(() => {
-	return useRoute().name === 'not-found' ? true : false
-})
+const isErrorPage = computed(() => useRoute().name === 'not-found' ? true : false)
 </script>
 
 <template>

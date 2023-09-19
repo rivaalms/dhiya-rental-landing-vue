@@ -1,4 +1,4 @@
-export const useCompany : Company = {
+export const company : Company = {
    name: 'Dhiya Multi Niaga',
    address: 'Jl. Radio No. 798, Kota Bandung, Jawa Barat 50830',
    email: 'dhiyamultiniaga@example.com',

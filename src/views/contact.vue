@@ -42,9 +42,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref} from 'vue'
-import { useCompany } from '@/composables/company'
+import { computed } from 'vue'
+import { company as Company } from '@/models/company'
 import Header from '@/components/header.vue'
 
-const company = ref(useCompany)
+const company = computed(() => Company)
 </script>

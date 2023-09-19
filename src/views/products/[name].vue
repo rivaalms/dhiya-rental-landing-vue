@@ -97,13 +97,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import Header from '@/components/header.vue'
-import { useCurrency, useVehicle } from '@/composables/products'
-import { useCompany } from '@/composables/company'
+import { useCurrency, getVehicle } from '@/models/products'
+import { company as Company } from '@/models/company'
 
 const route = useRoute()
-const company = ref(useCompany)
-const data = ref(useVehicle(route.params.name.toString()))
+const company = computed(() => Company)
+const data = computed(() => getVehicle(route.params.name.toString()))
 </script>
