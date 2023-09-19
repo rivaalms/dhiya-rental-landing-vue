@@ -32,6 +32,8 @@ const router = createRouter({
       name: 'product',
       component: () => import('@/views/products/[name].vue')
     },
+
+    // route not found handler
     {
       path: '/:pathmatch(.*)*',
       name: 'not-found',

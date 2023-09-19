@@ -42,8 +42,6 @@
 import { RouterLink, useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
 
-const isHomePage = computed(() => useRoute().name === 'home' ? true : false)
-
 const currentRoute = computed(() => useRoute().path)
 
 const activeClass = ref([
