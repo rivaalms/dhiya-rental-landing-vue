@@ -1,15 +1,9 @@
 <template>
-<div class="h-[420px] bg-[url('/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
-   <div class="absolute h-full w-full bg-black -z-30 opacity-[25%]"></div>
-   <Header class="absolute h-full w-full"/>
-   <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
-      <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-         <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
-            Produk
-         </p>
-      </div>
-   </div>
-</div>
+<Hero bg="/img/pangalengan-2.jpg" height="420">
+   <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
+      Produk
+   </p>
+</Hero>
 <div class="container px-4 md:px-0 md:w-2/3 mx-auto py-12">
    <div class="pb-6 md:py-12">
       <p class="mb-4">
@@ -54,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import Header from '@/components/header.vue'
+import Hero from '@/components/hero.vue'
 import { computed } from 'vue'
 import { getAllVehicles, useCurrency } from '@/models/products'
 import { company as Company } from '@/models/company'

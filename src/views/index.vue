@@ -1,25 +1,19 @@
 <template>
 <!-- Hero -->
-<div class="h-screen md:h-[650px] bg-[url('/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
-   <div class="absolute h-full w-full bg-black -z-30 opacity-[25%]"></div>
-   <Header class="absolute h-full w-full"/>
-   <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
-      <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-         <p class="uppercase text-gray-200 font-semibold text-lg md:text-2xl">
-            Travel and Tour Bandung
-         </p>
-         <div class="w-40 border-2 border-amber-500"></div>
-         <p class="uppercase text-gray-200 tracking-wide font-semibold text-3xl md:text-6xl mb-12">
-            {{ company.name }}
-         </p>
-         <div>
-            <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 font-medium rounded-full tracking-wide px-8 py-4 mb-2 transition-colors text-sm md:text-base">
-               RESERVASI SEKARANG
-            </router-link>
-         </div>
-      </div>
+<Hero md-height="650" bg="/img/pangalengan-2.jpg">
+   <p class="uppercase text-gray-200 font-semibold text-lg md:text-2xl">
+      Travel and Tour Bandung
+   </p>
+   <div class="w-40 border-2 border-amber-500"></div>
+   <p class="uppercase text-gray-200 tracking-wide font-semibold text-3xl md:text-6xl mb-12">
+      {{ company.name }}
+   </p>
+   <div>
+      <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 font-medium rounded-full tracking-wide px-8 py-4 mb-2 transition-colors text-sm md:text-base">
+         RESERVASI SEKARANG
+      </router-link>
    </div>
-</div>
+</Hero>
 
 <div class="container mx-auto">
    <!-- Showcase card -->
@@ -120,7 +114,7 @@
 </template>
 
 <script setup lang="ts">
-import Header from '@/components/header.vue'
+import Hero from '@/components/hero.vue'
 import { computed } from 'vue'
 import { company as Company } from '@/models/company'
 import { getAllVehicles, useCurrency } from '@/models/products'
