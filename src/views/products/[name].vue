@@ -1,15 +1,9 @@
 <template>
-<div class="h-[420px] bg-[url('/img/pangalengan-2.jpg')] backdrop-brightness-50 bg-center bg-no-repeat bg-cover relative">
-   <div class="absolute h-full w-full bg-black -z-30 opacity-[25%]"></div>
-   <Header class="absolute h-full w-full"/>
-   <div class="container mx-auto h-full grid grid-cols-1 gap-4 place-items-center">
-      <div class="grid grid-cols-1 gap-4 place-items-center z-10">
-         <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
-            {{ data?.name }}
-         </p>
-      </div>
-   </div>
-</div>
+<Hero bg="/img/pangalengan-2.jpg" height="420">
+   <p class="uppercase text-gray-200 font-semibold text-4xl md:text-5xl">
+      {{ data?.name }}
+   </p>
+</Hero>
 <div class="pb-12 pt-12 md:pt-24">
    <div class="md:w-2/3 px-4 md:px-0 mx-auto">
       <p class="mb-4">
@@ -99,7 +93,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import Header from '@/components/header.vue'
+import Hero from '@/components/hero.vue'
 import { useCurrency, getVehicle } from '@/models/products'
 import { company as Company } from '@/models/company'
 

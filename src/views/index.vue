@@ -1,10 +1,6 @@
 <template>
 <!-- Hero -->
 <Hero md-height="650" bg="/img/pangalengan-2.jpg">
-   <p class="uppercase text-gray-200 font-semibold text-lg md:text-2xl">
-      Travel and Tour Bandung
-   </p>
-   <div class="w-40 border-2 border-amber-500"></div>
    <p class="uppercase text-gray-200 tracking-wide font-semibold text-3xl md:text-6xl mb-12">
       {{ company.name }}
    </p>
@@ -80,7 +76,7 @@
                         Kendaraan berkapasitas {{ item.capacity }} penumpang dengan harga mulai dari {{ useCurrency(item.price_inside_city) }}.
                      </p>
                      <div class="mb-2">
-                        <router-link :to="item.href" class="text-amber-500 underline">
+                        <router-link :to="item.href" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
                            Detail
                         </router-link>
                      </div>
@@ -89,7 +85,7 @@
             </template>
          </div>
          <div class="flex justify-center mt-12">
-            <router-link to="/products" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-2">
+            <router-link to="/products" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 rounded-full tracking-wide px-5 py-3">
                Lihat selengkapnya
             </router-link>
          </div>
@@ -98,10 +94,10 @@
 
    <!-- Contacts -->
    <div class="pt-12 md:py-24 grid grid-cols-1">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-96 w-full mx-auto bg-[url('/img/ranca-upas.jpg')] bg-left-bottom bg-no-repeat bg-cover relative">
-         <div class="absolute h-full w-full bg-black opacity-[45%]"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-96 w-full mx-auto relative">
+         <!-- <div class="absolute h-full w-full bg-black opacity-[45%]"></div> -->
          <div class="md:col-span-2 px-4 md:px-28 flex items-center">
-            <div class="z-40 text-gray-200">
+            <div class="z-40 text-gray-800">
                <p class="mb-8 text-base md:text-lg">Kami menawarkan beragam armada transportasi dalam dan luar Kota Bandung</p>
                <router-link to="/contacts" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-400/75 text-sm font-medium rounded-full tracking-wide px-8 py-4 mr-2 mb-2">
                   RESERVASI SEKARANG
